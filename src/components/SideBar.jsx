@@ -19,6 +19,9 @@ function SideBar() {
         <Link to="/payments" className="flex items-center gap-2">
           <FaMoneyCheck /> Payments
         </Link>
+        <Link to="/branch" className="flex items-center gap-2">
+          <FaMoneyCheck /> Branch
+        </Link>
       </ul>
     </div>
   );
