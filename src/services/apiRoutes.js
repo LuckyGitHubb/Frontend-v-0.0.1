@@ -12,3 +12,9 @@ const domain = 'http://localhost:5000';
         GET_ONE: `${domain}/branch/single/:id`,
         GET_ALL: `${domain}/branch/all`,
     }
+    export const Product_API = {
+        ADD: `${domain}/product/add`, // both add and update
+        DELETE: `${domain}/product/delete/:id`,
+        GET_ONE: `${domain}/product/single/:id`,
+        GET_ALL: `${domain}/product/all`,
+    }
