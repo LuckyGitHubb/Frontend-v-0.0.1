@@ -8,8 +8,8 @@ import BranchListPage from './pages/BranchPages/BranchListPage'
 import BranchFormPage from './pages/BranchPages/BranchFormPage'
 import ProductListPage from './pages/ProductPages/ProductListPage'
 import ProductFormPage from './pages/ProductPages/ProductFormPage'
-import StockList from './components/InventoryManagement/StockManagement/StockList'
 import StockFormPage from './pages/StockPages/StockFormPage'
+import StockListPage from './pages/StockPages/StockListPage'
 
 function App() {
   return (
@@ -22,7 +22,7 @@ function App() {
       <Route path="/branch/add" element={<BranchFormPage/>}/>
       <Route path="/product" element={<ProductListPage/>}/>
       <Route path="/product/add" element={<ProductFormPage/>}/>
-      <Route path="/stock" element={<StockList/>}/>
+      <Route path="/stock" element={<StockListPage/>}/>
       <Route path="/stock/add" element={<StockFormPage/>}/>
     </Routes>
     </BrowserRouter>
