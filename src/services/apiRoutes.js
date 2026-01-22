@@ -18,3 +18,9 @@ const domain = 'http://localhost:5000';
         GET_ONE: `${domain}/product/single/:id`,
         GET_ALL: `${domain}/product/all`,
     }
+    export const Stock_API = {
+        ADD: `${domain}/stock/add`, // both add and update
+        DELETE: `${domain}/stock/delete/:id`,
+        GET_ONE: `${domain}/stock/single/:id`,
+        GET_ALL: `${domain}/stock/all`,
+    }

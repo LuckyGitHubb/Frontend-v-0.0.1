@@ -25,6 +25,9 @@ function SideBar() {
         <Link to="/product" className="flex items-center gap-2">
           <FaMoneyCheck /> Product
         </Link>
+        <Link to="/stock" className="flex items-center gap-2">
+          <FaMoneyCheck /> Stock
+        </Link>
       </ul>
     </div>
   );
