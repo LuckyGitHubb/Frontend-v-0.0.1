@@ -24,3 +24,15 @@ const domain = 'http://localhost:5000';
         GET_ONE: `${domain}/stock/single/:id`,
         GET_ALL: `${domain}/stock/all`,
     }
+    export const Purchase_API = {
+        ADD: `${domain}/purchase/add`, // both add and update
+        DELETE: `${domain}/purchase/delete/:id`,
+        GET_ONE: `${domain}/purchase/single/:id`,
+        GET_ALL: `${domain}/purchase/all`,
+    }
+    export const Sale_API = {
+        ADD: `${domain}/sale/add`, // both add and update
+        DELETE: `${domain}/sale/delete/:id`,
+        GET_ONE: `${domain}/sale/single/:id`,
+        GET_ALL: `${domain}/sale/all`,
+    }

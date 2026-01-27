@@ -10,6 +10,8 @@ import ProductListPage from './pages/ProductPages/ProductListPage'
 import ProductFormPage from './pages/ProductPages/ProductFormPage'
 import StockFormPage from './pages/StockPages/StockFormPage'
 import StockListPage from './pages/StockPages/StockListPage'
+import PurchaseFormPage from './pages/PurchasePages/PurchaseFormPage'
+import SaleFormPage from './pages/SalePages/SaleFormPage'
 
 function App() {
   return (
@@ -24,7 +26,9 @@ function App() {
       <Route path="/product/add" element={<ProductFormPage/>}/>
       <Route path="/stock" element={<StockListPage/>}/>
       <Route path="/stock/add" element={<StockFormPage/>}/>
-    </Routes>
+      <Route path="/purchase/add" element={<PurchaseFormPage/>}/>
+      <Route path="/sale/add" element={<SaleFormPage/>}/>
+    </Routes>   
     </BrowserRouter>
     </>
   )

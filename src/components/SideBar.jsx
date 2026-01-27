@@ -28,6 +28,12 @@ function SideBar() {
         <Link to="/stock" className="flex items-center gap-2">
           <FaMoneyCheck /> Stock
         </Link>
+        <Link to="/purchase/add" className="flex items-center gap-2">
+          <FaMoneyCheck /> Purchase
+        </Link>
+        <Link to="/sale/add" className="flex items-center gap-2">
+          <FaMoneyCheck /> Sale
+        </Link>
       </ul>
     </div>
   );
