@@ -36,3 +36,9 @@ const domain = 'http://localhost:5000';
         GET_ONE: `${domain}/sale/single/:id`,
         GET_ALL: `${domain}/sale/all`,
     }
+    export const Invoice_API = {
+        ADD:(saleId)=> `${domain}/invoice/add/${saleId}`, // both add and update
+        DELETE: `${domain}/invoice/delete/:id`,
+        GET_ONE: `${domain}/invoice/single/:id`,
+        GET_ALL: `${domain}/invoice/all`,
+    }   

@@ -5,13 +5,13 @@ import Section from "../../ui/Section";
 import FormSection from "../../ui/FormSection";
 import MainDiv from "../../ui/MainDiv";
 import { globalApi } from "../../../services/apiClient";
-import { Branch_API, Product_API, Purchase_API, Stock_API } from "../../../services/apiRoutes";
+import { Branch_API, Purchase_API, } from "../../../services/apiRoutes";
 
 function PurchaseForm() {
     const navigate = useNavigate();
     const { state } = useLocation();
     const [loading, setLoading] = useState(false)
-    const [products, setProducts] = useState([])
+    const [purchase, setPurchase] = useState([])
     const [branches, setBranches] = useState([])
     const [branch, setBranch] = useState([])
     const [rows, setRows] = useState([{
@@ -56,15 +56,15 @@ function PurchaseForm() {
         )
     }
 
-    //   fetch product and fetch branch ==============================================
-    const fetchProducts = async () => {
+    //   fetch purchase and fetch branch ==============================================
+    const fetchAllPurchase = async () => {
         try {
             setLoading(true);
-            const response = await globalApi("GET", undefined, Product_API.GET_ALL);
+            const response = await globalApi("GET", undefined, Purchase_API.GET_ALL);
             const { data } = response;
-            setProducts(data);
+            setPurchase(data);
         } catch (error) {
-            console.error("Error fetching products:", error);
+            console.error("Error fetching purchase:", error);
         } finally {
             setLoading(false);
         }
@@ -85,7 +85,7 @@ function PurchaseForm() {
     // ================================================================================
 
     useEffect(() => {
-        fetchProducts()
+        fetchAllPurchase()
         fetchBranches()
     }, []);
 
@@ -113,9 +113,9 @@ function PurchaseForm() {
         <MainDiv>
             <Section>
                 <h2 className="text-2xl font-bold text-[#4c4c4c]">
-                    {state?.mode === "add" && "Add Stock"}
-                    {state?.mode === "edit" && "Edit Stock"}
-                    {state?.mode === "view" && "View Stock"}
+                    {state?.mode === "add" && "Add Purchase"}
+                    {state?.mode === "edit" && "Edit Purchase"}
+                    {state?.mode === "view" && "View Purchase"}
                 </h2>
                 <Button onClick={() => navigate(-1)}>Back</Button>
             </Section>
@@ -147,9 +147,9 @@ function PurchaseForm() {
                         </select>
                     </div>
 
-                    {/* ===== Product & Stock Details Section ===== */}
+                    {/* ===== Product & Purchase Details Section ===== */}
                     {rows.map((item, index) => (
-                        <div className="p-4 border border-gray-200 rounded-md">
+                        <div key={index} className="p-4 border border-gray-200 rounded-md">
                             <div className="grid grid-cols-3 gap-4">
 
                                 <div>
@@ -165,8 +165,8 @@ function PurchaseForm() {
                                     >
                                         <option value="">Select Product</option>
 
-                                        {products.length > 0 ? (
-                                            products.map((item) => (
+                                        {purchase.length > 0 ? (
+                                            purchase.map((item) => (
                                                 <option key={item?._id} value={item?._id}>
                                                     {item?.code} {item?.name}
                                                 </option>

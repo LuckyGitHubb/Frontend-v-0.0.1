@@ -1,5 +1,8 @@
 import React from 'react'
 import { FaMoneyBillWave, FaFileInvoiceDollar, FaCreditCard, FaMoneyCheck } from 'react-icons/fa';
+import { FiShoppingCart } from 'react-icons/fi';
+import { HiOutlineBuildingOffice, HiOutlineCube } from 'react-icons/hi2';
+import { MdInventory2, MdPointOfSale } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 function SideBar() {
@@ -13,26 +16,26 @@ function SideBar() {
         <Link to="/income" className="flex items-center gap-2">
           <FaMoneyBillWave /> Income
         </Link>
-        <Link to="/invoice" className="flex items-center gap-2">
-          <FaFileInvoiceDollar /> Invoice
-        </Link>
         <Link to="/payments" className="flex items-center gap-2">
           <FaMoneyCheck /> Payments
         </Link>
         <Link to="/branch" className="flex items-center gap-2">
-          <FaMoneyCheck /> Branch
+          <HiOutlineBuildingOffice /> Branch
         </Link>
         <Link to="/product" className="flex items-center gap-2">
-          <FaMoneyCheck /> Product
+          <HiOutlineCube /> Product
         </Link>
         <Link to="/stock" className="flex items-center gap-2">
-          <FaMoneyCheck /> Stock
+          <MdInventory2 /> Stock
         </Link>
-        <Link to="/purchase/add" className="flex items-center gap-2">
-          <FaMoneyCheck /> Purchase
+        <Link to="/purchase/all" className="flex items-center gap-2">
+          <FiShoppingCart /> Purchase
         </Link>
-        <Link to="/sale/add" className="flex items-center gap-2">
-          <FaMoneyCheck /> Sale
+        <Link to="/sale/all" className="flex items-center gap-2">
+          <MdPointOfSale /> Sale
+        </Link>
+        <Link to="/invoice/all" className="flex items-center gap-2">
+          <FaFileInvoiceDollar /> Invoice
         </Link>
       </ul>
     </div>

@@ -12,6 +12,11 @@ import StockFormPage from './pages/StockPages/StockFormPage'
 import StockListPage from './pages/StockPages/StockListPage'
 import PurchaseFormPage from './pages/PurchasePages/PurchaseFormPage'
 import SaleFormPage from './pages/SalePages/SaleFormPage'
+import PurchaseListPage from './pages/PurchasePages/PurchaseListPage'
+import SaleListPage from './pages/SalePages/SaleListPage'
+import InvoiceFormPage from './pages/InvoicePages/InvoiceFormPage'
+import InvoiceListPage from './pages/InvoicePages/InvoiceListPage'
+import InvoiceViewPage from './pages/InvoicePages/InvoiceViewPage'
 
 function App() {
   return (
@@ -26,8 +31,13 @@ function App() {
       <Route path="/product/add" element={<ProductFormPage/>}/>
       <Route path="/stock" element={<StockListPage/>}/>
       <Route path="/stock/add" element={<StockFormPage/>}/>
+      <Route path="/purchase/all" element={<PurchaseListPage/>}/>
       <Route path="/purchase/add" element={<PurchaseFormPage/>}/>
+      <Route path="/sale/all" element={<SaleListPage/>}/>
       <Route path="/sale/add" element={<SaleFormPage/>}/>
+      <Route path="/invoice/add/:saleId" element={<InvoiceFormPage/>}/>
+      <Route path="/invoice/all" element={<InvoiceListPage/>}/>
+      <Route path="/invoice/view" element={<InvoiceViewPage/>}/>
     </Routes>   
     </BrowserRouter>
     </>

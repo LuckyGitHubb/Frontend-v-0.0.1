@@ -5,13 +5,13 @@ import Section from "../../ui/Section";
 import FormSection from "../../ui/FormSection";
 import MainDiv from "../../ui/MainDiv";
 import { globalApi } from "../../../services/apiClient";
-import { Branch_API, Product_API, Sale_API } from "../../../services/apiRoutes";
+import { Branch_API, Sale_API } from "../../../services/apiRoutes";
 
 function SaleForm() {
     const navigate = useNavigate();
     const { state } = useLocation();
     const [loading, setLoading] = useState(false)
-    const [products, setProducts] = useState([])
+    const [sale, setSale] = useState([])
     const [branches, setBranches] = useState([])
     const [branch, setBranch] = useState([])
     const [rows, setRows] = useState([{
@@ -53,15 +53,15 @@ function SaleForm() {
         )
     }
 
-    //   fetch product and fetch branch ==============================================
-    const fetchProducts = async () => {
+    //   fetch sale and fetch branch ==============================================
+    const fetchSales = async () => {
         try {
             setLoading(true);
-            const response = await globalApi("GET", undefined, Product_API.GET_ALL);
+            const response = await globalApi("GET", undefined, Sale_API.GET_ALL);
             const { data } = response;
-            setProducts(data);
+            setSale(data);
         } catch (error) {
-            console.error("Error fetching products:", error);
+            console.error("Error fetching sale:", error);
         } finally {
             setLoading(false);
         }
@@ -82,7 +82,7 @@ function SaleForm() {
     // ================================================================================
 
     useEffect(() => {
-        fetchProducts()
+        fetchSales()
         fetchBranches()
     }, []);
 
@@ -110,9 +110,9 @@ function SaleForm() {
         <MainDiv>
             <Section>
                 <h2 className="text-2xl font-bold text-[#4c4c4c]">
-                    {state?.mode === "add" && "Add Stock"}
-                    {state?.mode === "edit" && "Edit Stock"}
-                    {state?.mode === "view" && "View Stock"}
+                    {state?.mode === "add" && "Add Sale"}
+                    {state?.mode === "edit" && "Edit Sale"}
+                    {state?.mode === "view" && "View Sale"}
                 </h2>
                 <Button onClick={() => navigate(-1)}>Back</Button>
             </Section>
@@ -144,9 +144,9 @@ function SaleForm() {
                         </select>
                     </div>
 
-                    {/* ===== Product & Stock Details Section ===== */}
+                    {/* ===== Product & Sale Details Section ===== */}
                     {rows.map((item, index) => (
-                        <div className="p-4 border border-gray-200 rounded-md">
+                        <div key={index} className="p-4 border border-gray-200 rounded-md">
                             <div className="grid grid-cols-3 gap-4">
 
                                 <div>
@@ -162,8 +162,8 @@ function SaleForm() {
                                     >
                                         <option value="">Select Product</option>
 
-                                        {products.length > 0 ? (
-                                            products.map((item) => (
+                                        {sale.length > 0 ? (
+                                            sale.map((item) => (
                                                 <option key={item?._id} value={item?._id}>
                                                     {item?.code} {item?.name}
                                                 </option>
