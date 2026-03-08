@@ -17,14 +17,16 @@ import SaleListPage from './pages/SalePages/SaleListPage'
 import InvoiceFormPage from './pages/InvoicePages/InvoiceFormPage'
 import InvoiceListPage from './pages/InvoicePages/InvoiceListPage'
 import InvoiceViewPage from './pages/InvoicePages/InvoiceViewPage'
+import DashboardPage from './pages/DashboardPages/DashboardPage'
 
 function App() {
   return (
     <>
     <BrowserRouter>
     <Routes>
-      <Route path="/expense" element={<ExpenseList/>}/>
-      <Route path="/expense/add" element={<AddExpense/>}/>
+      {/* <Route path="/expense" element={<ExpenseList/>}/>
+      <Route path="/expense/add" element={<AddExpense/>}/> */}
+      <Route path="/dashboard" element={<DashboardPage/>}/>
       <Route path="/branch" element={<BranchListPage/>}/>
       <Route path="/branch/add" element={<BranchFormPage/>}/>
       <Route path="/product" element={<ProductListPage/>}/>

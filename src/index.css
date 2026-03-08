@@ -2,3 +2,26 @@
 body{
     box-sizing: border-box;
 }
+
+@layer components {
+
+  .dashboard-card {
+    @apply bg-white rounded-2xl shadow-sm p-6
+           hover:shadow-md transition duration-300
+           flex items-center gap-4
+           border border-gray-100;
+  }
+
+  .icon-wrapper {
+    @apply w-12 h-12 rounded-xl flex items-center justify-center;
+  }
+
+  .card-title {
+    @apply text-sm text-gray-500 font-medium;
+  }
+
+  .card-value {
+    @apply text-3xl font-bold text-gray-800 mt-1;
+  }
+
+}
